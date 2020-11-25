@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: image-pull-secrets-controller
+  namespace: kube-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-pull-secrets-controller
+  template:
+    metadata:
+      labels:
+        app: image-pull-secrets-controller
+    spec:
+      serviceAccountName: image-pull-secrets-controller
+      containers:
+      - name: image-pull-secrets-controller
+        image: nicholasdille/image-pull-secrets-controller:latest
+        imagePullPolicy: Always
