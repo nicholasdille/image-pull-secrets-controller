@@ -1,0 +1,7 @@
+mirrors:
+  localhost:
+    endpoint:
+      - "http://${REGISTRY_LOCAL_PORT}:${REGISTRY_LOCAL_PORT}"
+  docker.io:
+    endpoint:
+      - "http://${REGISTRY_CACHE_NAME}:5000"
