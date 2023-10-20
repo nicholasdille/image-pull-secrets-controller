@@ -6,8 +6,8 @@ RUN echo "@testing http://nl.alpinelinux.org/alpine/edge/testing" >>/etc/apk/rep
         bash \
         curl \
         jq \
-        kubectl@testing \
-        yq@edgecommunity
+        kubectl@edgecommunity \
+        yq
 
 COPY . /opt/image-pull-secrets-controller/
 WORKDIR /opt/image-pull-secrets-controller
